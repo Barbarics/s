@@ -1,0 +1,85 @@
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "Pulchritudinous Hub",
+    LoadingTitle = "let the fun begin",
+    LoadingSubtitle = "yeat on top",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "Big Hub"
+    },
+    KeySystem = true, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "beyonce has a fat ass",
+       Subtitle = "please let me hit beyonce",
+       Note = "stream yeat on all streaming platforms",
+       FileName = "SiriusKey",
+       SaveKey = true,
+       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = "BeyonceHasAFatty1"
+    }
+ })
+
+ local Tab = Window:CreateTab("Player", 4483362458)
+ local Section = Tab:CreateSection("Player Utilization")
+
+ Rayfield:Notify({
+    Title = "hey bitch",
+    Content = "this ui is still in development, dont complaining to me u queers",
+    Duration = 6.5,
+    Image = 4483362458,
+    Actions = { -- Notification Buttons
+       Ignore = {
+          Name = "stfu fag",
+          Callback = function()
+          print("The user tapped Okay!")
+       end
+    },
+ },
+ })
+
+ local Button = Tab:CreateButton({
+    Name = "plr speed",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/GeekedUp44/speed/main/fuckingsofast"))() --- try it
+    end,
+ })
+
+ local Button2 = Tab:CreateButton({
+    Name = "no press",
+    Callback = function()
+        for i,v in pairs(game:GetService("Workspace").Stadium:GetChildren()) do
+            if v:IsA("Part") and v:FindFirstChild("BluePress") or v:FindFirstChild("RedPress") then
+             v:Destroy()
+              end
+          end
+    end,
+ })
+
+ local Toggle = Tab:CreateToggle({
+    Name = "long arms",
+    CurrentValue = false,
+    Flag = "long ass arms", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+        getgenv().longArm = Value
+        if longArm == true then
+          game:GetService("Players").LocalPlayer.Character['Left Arm'].Size = Vector3.new(15, 1, 1)
+          game:GetService("Players").LocalPlayer.Character['Right Arm'].Size = Vector3.new(15, 1, 1)
+        else
+          game:GetService("Players").LocalPlayer.Character['Left Arm'].Size = Vector3.new(1, 2, 1)
+          game:GetService("Players").LocalPlayer.Character['Right Arm'].Size = Vector3.new(1, 2, 1)
+        end
+    end,
+ })
+
+
+ local Button3 = Tab:CreateButton({
+    Name = "loom aimbot, no group needed",
+    Callback = function()
+        hookfunction(game:GetService("Players").LocalPlayer.IsInGroup, function()
+            return true
+        end)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Loompic/Phenom-Aimbot/main/Bot"))()
+    end,
+ })
